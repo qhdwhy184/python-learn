@@ -1,10 +1,19 @@
-import sys
+flags = (
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+)
 
-def huihui():
-        if len(sys.argv) >=2:
-                name = sys.argv[1]
-        else:
-                name = 'World'
-        print 'Hello', name, sys.argv[0]
-
-huihui()
+print('flags.__class__:{}'.format(flags.__class__))
+# print('flags.__dict__:{}'.format(flags.__dict__))
+print('None.__dict__:{}'.format(None.__dict__))

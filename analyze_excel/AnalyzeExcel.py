@@ -1,4 +1,5 @@
 # coding=utf-8
+import os
 import xlrd
 import xlsxwriter
 import datetime
@@ -12,7 +13,7 @@ def build_result_file(f1_path, index, src_index_field, new_field):
     num_cols = sheet.ncols
     num_rows = sheet.nrows
     index_field_no = -1
-    new_field_no = num_cols + 1
+    new_field_no = num_cols
 
     for coln in range(num_cols):
         if sheet.cell_value(0, coln) == src_index_field:
@@ -90,13 +91,15 @@ def buildIndex(file2_path, index_field, new_field):
 def main():
     start_time = datetime.datetime.now().replace(microsecond=0)
     print "开始时间: %s" % start_time
-    f = open("/Users/yuanhuiw/Downloads/tmp/tmp/程序启动参数.txt", "rt")
+
+    __location__ = os.path.realpath(
+        os.path.join(os.getcwd(), os.path.dirname(__file__)))
+    f = open(os.path.join(__location__, '程序启动参数.txt'))
     args = f.read().splitlines()
     tb1_path = unicode(args[0][(args[0].index(':'))+1:], "utf-8")
     tb2_path = unicode(args[1][(args[1].index(':'))+1:], "utf-8")
     file1_idx = unicode(args[2][(args[2].index(':'))+1:], "utf-8")
     file2_idx = unicode(args[3][(args[3].index(':'))+1:], "utf-8")
-    # file2_idx = args[3]
     new_field = unicode(args[4][(args[4].index(':'))+1:], "utf-8")
 
     print "[表1文件路径]:", tb1_path

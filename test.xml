@@ -1,0 +1,7 @@
+<config>
+   <!-- this is an example host-cfg file
+   <uuid>00112233-4455-6677-8899-aabbccddeeff</uuid>
+   <hostPrivateKeyFile>/etc/vmware/nsx/host-privkey.pem</hostPrivateKeyFile>
+   <hostCertificateFile>/etc/vmware/nsx/host-cert.pem</hostCertificateFile>
+   -->
+</config>
