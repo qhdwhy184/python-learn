@@ -1,19 +1,20 @@
-flags = (
-    0,
-    0,
-    0,
-    0,
-    1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    1,
-    0,
-)
+l = []
+print(bool(l))
+l.insert(0, 0)
+l.insert(1, 1)
+l.insert(1, 2)
+print(bool(l))
+print(bool(None))
+print(bool(""))
+print(bool(" "))
+print(bool(0))
+print(bool(1))
+try:
+    assert bool(0) == bool(1)
+except Exception as e:
+    import traceback
 
-print('flags.__class__:{}'.format(flags.__class__))
-# print('flags.__dict__:{}'.format(flags.__dict__))
-print('None.__dict__:{}'.format(None.__dict__))
+    trace = traceback.format_exc()
+    print("Error in main Exception:{}, trace:{}".format(e, trace))
+
+print(l)

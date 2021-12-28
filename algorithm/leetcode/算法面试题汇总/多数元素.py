@@ -1,5 +1,22 @@
 from typing import List
 
+class Solution4:
+    def majorityElement(self, nums: List[int]) -> int:
+        res = None
+        count = 0
+        for n in nums:
+            if res is None:
+                res = n
+                count = 1
+            elif res == n:
+                count += 1
+            elif count > 1:
+                count -= 1
+            else:
+                res = n
+
+        return res
+
 
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
@@ -83,11 +100,11 @@ class Solution3(object):
 
         # return nums
 
-# print(Solution3().majorityElement([3,2,3]))
-# print(Solution().majorityElement([1]))
-# print(Solution3().majorityElement([1,65535,1]))
-print(Solution3().majorityElement([1,65535,1,3,4,1,65535,65535,65535,65535,65535,4,65535,65535]))
-# print(Solution().majorityElement([-2147483648]))
+print(Solution4().majorityElement([3,2,3]))
+print(Solution4().majorityElement([1]))
+print(Solution4().majorityElement([1,65535,1]))
+print(Solution4().majorityElement([1,65535,1,3,4,1,65535,65535,65535,65535,65535,4,65535,65535]))
+print(Solution4().majorityElement([-2147483648]))
 # print(int(3/2))
-import math
-print(math.floor(3/2))
+# import math
+# print(math.floor(3/2))
