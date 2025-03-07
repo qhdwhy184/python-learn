@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package example;
+
+service BidirectionalStreamingService {
+    rpc SendMessageStream (stream Message) returns (stream MessageResponse) {}
+    rpc SendMessageNonStream (Message) returns (MessageResponse) {}
+}
+
+message Message {
+    string content = 1;
+}
+
+message MessageResponse {
+    string response_content = 1;
+}
